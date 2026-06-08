@@ -2,6 +2,9 @@
 
 A modern SharePoint Framework (SPFx) Web Part that displays "HR Agent" card with a Fluent UI button. When clicked, the button opens a new tab with Gemini Enterprise for the authenticated user where a user can call out the HR Agent and use it from there.
 
+Here's a sample result after adding a HR Agent button to a SharePoint site.
+![Alt text](https://github.com/mpolski/sharepoint-widget/blob/main/HR%20Agent%20widget.png)
+
 ---
 
 ## 💻 Part 1: Local Development & Testing
