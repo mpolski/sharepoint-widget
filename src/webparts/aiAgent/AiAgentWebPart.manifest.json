@@ -18,11 +18,14 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
     "group": { "default": "Advanced" },
-    "title": { "default": "AiAgent" },
+    "title": { "default": "HR Agent" },
     "description": { "default": "AI Agent Web Part" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "AiAgent"
+      "description": "You'll be taken to a new experience provided by Gemini Enterprise. Follow the link and just call (type) the @HR Agent to ask about any content from HR Portal.",
+      "redirectUrl": "https://auth.cloud.google/signin/locations/global/workforcePools/entraid-y6czq/providers/entra-id-y6czq?continueUrl=https%3A%2F%2Fvertexaisearch.cloud.google%2Fhome%2Fcid%2Fe6b2dc60-ba0b-4637-8c27-430bd8a4c39a&hl=en_U"
+
     }
+
   }]
 }

@@ -14,6 +14,7 @@ import { IAiAgentProps } from './components/IAiAgentProps';
 
 export interface IAiAgentWebPartProps {
   description: string;
+  redirectUrl: string;
 }
 
 export default class AiAgentWebPart extends BaseClientSideWebPart<IAiAgentWebPartProps> {
@@ -26,6 +27,7 @@ export default class AiAgentWebPart extends BaseClientSideWebPart<IAiAgentWebPar
       AiAgent,
       {
         description: this.properties.description,
+        redirectUrl: this.properties.redirectUrl,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -110,6 +112,9 @@ export default class AiAgentWebPart extends BaseClientSideWebPart<IAiAgentWebPar
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('redirectUrl', {
+                  label: "AI Agent Redirect URL"
                 })
               ]
             }

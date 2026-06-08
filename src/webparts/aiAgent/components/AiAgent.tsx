@@ -1,14 +1,14 @@
 import * as React from 'react';
-import styles from './AiAgent.module.scss';
 import type { IAiAgentProps } from './IAiAgentProps';
+import styles from './AiAgent.module.scss';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
-import { Icon } from '@fluentui/react/lib/Icon';
 
 export default class AiAgent extends React.Component<IAiAgentProps, {}> {
 
   private _onAgentClick = (): void => {
-    window.open('https://google.com', '_blank');
+    window.open(this.props.redirectUrl, '_blank');
   };
+
 
   public render(): React.ReactElement<IAiAgentProps> {
     const { isDarkTheme } = this.props;
@@ -19,18 +19,23 @@ export default class AiAgent extends React.Component<IAiAgentProps, {}> {
           <div className={styles.glowEffect}></div>
           <div className={styles.content}>
             <div className={styles.iconContainer}>
-              <Icon iconName="Robot" className={styles.agentIcon} />
+              <img src={require('../assets/agent-icon.svg')} className={styles.customIcon} alt="Agent Icon" />
             </div>
-            <h2 className={styles.title}>AI Agent</h2>
+
+
+
+
             <p className={styles.description}>
-              Access your intelligent assistant to automate tasks, find information, and streamline your workflow.
+              {this.props.description}
             </p>
+
             <PrimaryButton 
               className={styles.actionButton}
               onClick={this._onAgentClick}
-              text="Launch AI Agent"
+              text="HR Agent"
               iconProps={{ iconName: 'NavigateExternalInline' }}
             />
+
           </div>
         </div>
       </div>

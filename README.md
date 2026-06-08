@@ -1,6 +1,6 @@
 # SharePoint Online Web Part: AI Agent Launcher
 
-A premium, modern SharePoint Framework (SPFx) Web Part that displays a beautifully styled "AI Agent" card with a Fluent UI `PrimaryButton`. When clicked, the button opens `https://google.com` in a new browser tab.
+A premium, modern SharePoint Framework (SPFx) Web Part that displays a beautifully styled "AI Agent" card with a Fluent UI `PrimaryButton`. When clicked, the button opens your Google Cloud Vertex AI Search portal in a new tab!
 
 This project is built using **SPFx v1.19.0**, **React 17**, and **Fluent UI React v8**.
 
@@ -15,7 +15,37 @@ This project is built using **SPFx v1.19.0**, **React 17**, and **Fluent UI Reac
 
 ---
 
+## ⚙️ Configuration & Deployment
+
+This web part is designed to be fully configurable without needing to rebuild or redeploy the codebase.
+
+### Exposing the Redirect URL as a Variable
+The destination URL is exposed as a **Web Part Property** named `redirectUrl`. 
+
+### How to Configure the URL in SharePoint (Deployment Steps):
+1. Navigate to the SharePoint page where the web part is added.
+2. Click **Edit** at the top right of the page to enter edit mode.
+3. Select the **AI Agent** web part card, and click the **Edit Web Part** icon (the pencil icon in the floating toolbox).
+4. The **Property Pane** will open on the right side of the screen.
+5. In the **"AI Agent Redirect URL"** text field, you can paste the destination URL for your deployment (e.g. your production Vertex AI Search portal URL).
+6. Click **Publish** (or **Republish**) at the top right of the page to save and apply the changes.
+
+By default, the web part is preconfigured to use your custom Google Cloud Vertex AI Search workforce pool sign-in URL:
+`https://auth.cloud.google/signin/locations/global/workforcePools/entraid-y6czq/providers/entra-id-y6czq?continueUrl=https%3A%2F%2Fvertexaisearch.cloud.google%2Fhome%2Fcid%2Fe6b2dc60-ba0b-4637-8c27-430bd8a4c39a&hl=en_U`
+
+### How to Statically Replace the Icon/Logo:
+If you want to package your custom logo or icon directly into the web part codebase (statically) so that it is deployed out-of-the-box:
+1. Locate your own custom `.svg` image file.
+2. Copy it into your project directory, **overwriting** the placeholder file located at:
+   `src/webparts/aiAgent/assets/agent-icon.svg`
+3. Restart your Gulp development server (stop it with `Ctrl + C` and run `npx gulp serve` again) and do a **hard refresh (Ctrl + F5)** in your browser! The compiler will rebuild the package using your new SVG logo and display it on the card.
+
+
+---
+
+
 ## 📋 Prerequisites & Environment
+
 
 Because SharePoint Framework has strict Node.js version compatibility limits, please ensure your environment is configured correctly:
 
