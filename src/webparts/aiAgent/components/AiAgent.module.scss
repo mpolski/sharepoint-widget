@@ -1,0 +1,151 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.aiAgent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: transparent;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+
+  &[data-is-dark-theme="true"] {
+    .card {
+      background: rgba(24, 28, 36, 0.95);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    .title {
+      color: #ffffff;
+    }
+
+    .description {
+      color: #adadad;
+    }
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.02);
+
+      .glowEffect {
+        opacity: 0.15;
+      }
+
+      .iconContainer {
+        transform: scale(1.05) rotate(5deg);
+        background: linear-gradient(135deg, #0078d4, #5c2d91);
+      }
+    }
+  }
+
+  .glowEffect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 120, 212, 0.2) 0%, rgba(135, 100, 184, 0.05) 50%, transparent 100%);
+    opacity: 0.08;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .iconContainer {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #005a9e, #0078d4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 16px rgba(0, 120, 212, 0.25);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .agentIcon {
+      font-size: 38px;
+      color: #ffffff;
+    }
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0 0 28px 0;
+    max-width: 320px;
+  }
+
+  .actionButton {
+    height: 48px !important;
+    border-radius: 24px !important;
+    padding: 0 32px !important;
+    background: linear-gradient(135deg, #0078d4, #5c2d91) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+
+    :global(.ms-Button-label) {
+      font-weight: 600 !important;
+      font-size: 15px !important;
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+
+    :global(.ms-Button-icon) {
+      color: #ffffff !important;
+      font-size: 16px !important;
+      margin-left: 8px !important;
+    }
+
+    &:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(92, 45, 145, 0.4) !important;
+      filter: brightness(1.08);
+    }
+
+    &:active {
+      transform: translateY(0) !important;
+      box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2) !important;
+    }
+  }
+}
