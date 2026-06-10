@@ -1,6 +1,11 @@
 # HR Agent Launcher: SharePoint Online Web Part
 
+> [!NOTE]
+> **Meet-the-Users-Where-They-Are Example:**
+> In this example, we add a widget to an HR SharePoint site that will open the HR Agent (not built as part of this example, so it is a prerequisite) in Gemini Enterprise. The widget seamlessly handles authentication (this requires Workload Identity Federation (WIF) to be configured in GCP with Entra ID, which is also a prerequisite).
+
 A modern SharePoint Framework (SPFx) Web Part that displays "HR Agent" card with a Fluent UI button. When clicked, the button opens a new tab with Gemini Enterprise for the authenticated user where a user can call out the HR Agent and use it from there.
+
 
 Here's a sample result after adding a HR Agent button to a SharePoint site.
 ![Alt text](https://github.com/mpolski/sharepoint-widget/blob/main/HR%20Agent%20widget.png)
