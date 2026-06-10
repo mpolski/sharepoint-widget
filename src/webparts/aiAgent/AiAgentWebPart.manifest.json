@@ -22,7 +22,7 @@
     "description": { "default": "AI Agent Web Part" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "You'll be taken to a new experience provided by Gemini Enterprise. Follow the link and just call (type) the @HR Agent to ask about any content from HR Portal.",
+      "description": "You'll be taken to a new experience provided by Gemini Enterprise.Follow the link to access the HR Agent and more.",
       "redirectUrl": "https://<your-gemini-enterprise-link>"
 
 
